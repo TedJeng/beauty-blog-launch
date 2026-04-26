@@ -8,7 +8,12 @@ interface TOCItem {
   level: number;
 }
 
-export default function TableOfContents({ content }: { content: string }) {
+interface TOCProps {
+  content: string;
+  variant: "mobile" | "desktop";
+}
+
+export default function TableOfContents({ content, variant }: TOCProps) {
   const [activeId, setActiveId] = useState("");
   const [isOpen, setIsOpen] = useState(false);
 
@@ -49,9 +54,8 @@ export default function TableOfContents({ content }: { content: string }) {
 
   if (headings.length === 0) return null;
 
-  return (
-    <>
-      {/* Mobile: collapsible */}
+  if (variant === "mobile") {
+    return (
       <div className="lg:hidden mb-6">
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -90,32 +94,34 @@ export default function TableOfContents({ content }: { content: string }) {
           </nav>
         )}
       </div>
+    );
+  }
 
-      {/* Desktop: sticky sidebar */}
-      <nav className="hidden lg:block sticky top-24">
-        <h4 className="text-xs font-semibold uppercase tracking-wider text-text-lighter mb-3">
-          文章目錄
-        </h4>
-        <ul className="space-y-2 border-l-2 border-primary-light/30">
-          {headings.map((h) => (
-            <li
-              key={h.id}
-              style={{ paddingLeft: `${(h.level - 2) * 12 + 12}px` }}
+  // Desktop: sticky sidebar
+  return (
+    <nav className="hidden lg:block sticky top-24">
+      <h4 className="text-xs font-semibold uppercase tracking-wider text-text-lighter mb-3">
+        文章目錄
+      </h4>
+      <ul className="space-y-2 border-l-2 border-primary-light/30">
+        {headings.map((h) => (
+          <li
+            key={h.id}
+            style={{ paddingLeft: `${(h.level - 2) * 12 + 12}px` }}
+          >
+            <a
+              href={`#${h.id}`}
+              className={`block text-sm transition-colors ${
+                activeId === h.id
+                  ? "text-accent font-medium"
+                  : "text-text-lighter hover:text-text-light"
+              }`}
             >
-              <a
-                href={`#${h.id}`}
-                className={`block text-sm transition-colors ${
-                  activeId === h.id
-                    ? "text-accent font-medium"
-                    : "text-text-lighter hover:text-text-light"
-                }`}
-              >
-                {h.text}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </>
+              {h.text}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 }

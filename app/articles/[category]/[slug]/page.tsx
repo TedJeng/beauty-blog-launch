@@ -155,7 +155,7 @@ export default async function ArticlePage({
         <div className="mt-10 flex gap-10">
           {/* Main Content */}
           <div className="flex-1 min-w-0 max-w-3xl">
-            <TableOfContents content={article.content} />
+            <TableOfContents content={article.content} variant="mobile" />
             <div className="prose prose-lg max-w-none">
               <MDXRemote
                 source={article.content}
@@ -171,7 +171,7 @@ export default async function ArticlePage({
 
           {/* Desktop TOC Sidebar */}
           <aside className="hidden lg:block w-56 shrink-0">
-            <TableOfContents content={article.content} />
+            <TableOfContents content={article.content} variant="desktop" />
           </aside>
         </div>
 
