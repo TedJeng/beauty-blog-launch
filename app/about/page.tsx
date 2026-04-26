@@ -109,10 +109,10 @@ export default function AboutPage() {
           有任何問題或合作邀約，歡迎來信：
           <br />
           <a
-            href="mailto:hello@glowedit.com"
+            href="mailto:gn02087949@gmail.com"
             className="text-accent hover:text-accent-dark font-medium"
           >
-            hello@glowedit.com
+            gn02087949@gmail.com
           </a>
         </p>
       </section>
