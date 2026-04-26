@@ -104,5 +104,21 @@
     "affiliateUrl": "https://s.shopee.tw/9UxpCLuds0",
     "articleSlug": "skincare/aestura-atobarrier-365-cleanser",
     "isFeatured": true
+  },
+  {
+    "id": "ongredients-glow-mist",
+    "name": "Ongredients Skin Barrier Glow Mist Set (100ml + 50ml)",
+    "nameZh": "Ongredients 屏障水光保濕噴霧套裝",
+    "brand": "Ongredients",
+    "category": "skincare",
+    "price": { "tw": 890, "kr": 680, "currency": "TWD" },
+    "image": "/images/products/ongredients-glow-mist.png",
+    "rating": 4.6,
+    "reviewCount": 980,
+    "tags": ["保濕噴霧", "術後修護", "敏感肌", "Multi-Peptide", "Olive Young 熱銷"],
+    "description": "Centella + Multi-Peptide + Glutathione 三效配方，細霧質地適合術後敏感肌。早上化妝前打底、晚上保濕基底雙時段都好用。",
+    "affiliateUrl": "https://s.shopee.tw/2LUfSNbcMS",
+    "articleSlug": "skincare/ongredients-glow-mist",
+    "isFeatured": true
   }
 ]
