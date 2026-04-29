@@ -120,5 +120,21 @@
     "affiliateUrl": "https://s.shopee.tw/5VRmDlTMzC",
     "articleSlug": "skincare/ongredients-glow-mist",
     "isFeatured": true
+  },
+  {
+    "id": "mediheal-centella-mask",
+    "name": "Mediheal Centella Asiatica Soothing Mask",
+    "nameZh": "Mediheal 積雪草舒緩面膜",
+    "brand": "Mediheal",
+    "category": "skincare",
+    "price": { "tw": 429, "kr": 326, "currency": "TWD" },
+    "image": "/images/products/mediheal-centella-mask.png",
+    "rating": 4.6,
+    "reviewCount": 4200,
+    "tags": ["術後修護", "鎮靜", "敏感肌", "積雪草", "Olive Young 熱銷"],
+    "description": "積雪草 + 積雪草苷舒緩配方，精華吸收快不黏膩、補水有感。醫美術後常備首選，無酒精無香料友善敏感肌。",
+    "affiliateUrl": "https://s.shopee.tw/5L8M1SU0KB",
+    "articleSlug": "skincare/mediheal-centella-mask",
+    "isFeatured": true
   }
 ]
