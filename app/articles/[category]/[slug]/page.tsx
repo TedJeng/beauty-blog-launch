@@ -7,6 +7,7 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import Breadcrumb from "@/components/layout/Breadcrumb";
 import ReadingProgress from "@/components/articles/ReadingProgress";
 import TableOfContents from "@/components/articles/TableOfContents";
+import AffiliateLink from "@/components/articles/AffiliateLink";
 import RatingBar from "@/components/ui/RatingBar";
 import Badge from "@/components/ui/Badge";
 import { getArticleBySlug, getArticleSlugs } from "@/lib/content";
@@ -159,6 +160,7 @@ export default async function ArticlePage({
             <div className="prose prose-lg max-w-none">
               <MDXRemote
                 source={article.content}
+                components={{ AffiliateLink }}
                 options={{
                   mdxOptions: {
                     remarkPlugins: [remarkGfm],

@@ -136,5 +136,21 @@
     "affiliateUrl": "https://s.shopee.tw/5L8M1SU0KB",
     "articleSlug": "skincare/mediheal-centella-mask",
     "isFeatured": true
+  },
+  {
+    "id": "arencia-pdrn-cleansing-balm",
+    "name": "Arencia Pore Melt Phyto PDRN Cleansing Balm",
+    "nameZh": "Arencia 毛孔淨化 PDRN 卸妝膏",
+    "brand": "Arencia",
+    "category": "skincare",
+    "price": { "tw": 720, "kr": 520, "currency": "TWD" },
+    "image": "/images/products/arencia-pdrn-cleansing-balm.png",
+    "rating": 4.7,
+    "reviewCount": 1320,
+    "tags": ["術後修護", "敏感肌", "卸妝", "積雪草"],
+    "description": "PDRN + 植萃修護配方卸妝膏，膏體接觸體溫即化、推開超滑順。乳化沖洗乾淨，洗後肌膚乾爽不黏膩。各膚質適用，醫美術後敏感期友善。",
+    "affiliateUrl": "https://s.shopee.tw/9ALE1Jv3mQ",
+    "articleSlug": "skincare/arencia-pdrn-cleansing-balm",
+    "isFeatured": true
   }
 ]
