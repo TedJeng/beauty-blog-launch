@@ -120,3 +120,39 @@ npm run start  # 啟動生產伺服器
 - 不得宣稱療效，定位為「個人體驗分享」
 - 分潤連結須加 `rel="noopener noreferrer sponsored"` 並揭露利益關係
 - 代購規模擴大後注意食藥署登記與關稅門檻（完稅價 > NT$2,000）
+
+## 內容寫作工作流（重要）
+
+### 寫評測一律使用 skill
+
+**任何新增/編輯文章都必須先呼叫 `beauty-mdx-writer` skill**，不可憑記憶直接寫 MDX。skill 內含最新的 frontmatter schema、結構模板、合規用詞表，避免遺漏欄位或誤觸法規字眼。
+
+- 產品評測 / 術後保養：`beauty-mdx-writer`
+- 新增/更新產品 catalog：`beauty-product-curator`
+
+兩個 skill 會自動讀對應規範，工作流程也由 skill 定義，不要在主對話中重寫流程。
+
+### 評測文寫作慣例（本專案累積的決策）
+
+- **tags 控制在 3-5 個**（skill 預設規則，超過會被審稿打回）
+- **合規用詞**：避開「治療 / 療效 / 醫療級 / 美白 / 抗老 / 100% / 最佳」，即便是反向提及（「不主打美白」）也建議改用替代詞（「不主打提亮」）
+- **價格寫成區間 + 撰文日期**，避免檔期/匯率變動造成失準：
+  - 表頭用「售價區間（NT$）」而非「售價」
+  - 寫法：`約 320-360`、`約 560-600`
+  - 結論段用比例描述（「貴 1-2 成」）取代精確金額（「貴 100 元」）
+  - 表格下方加註：`> ⚠️ 以上為 YYYY 年 M 月撰文時參考區間，價格隨檔期與匯率浮動，實際請以連結頁面即時顯示為準。`
+  - 修改價格區間時記得同步更新 frontmatter 的 `updatedAt`
+
+### 評測 ↔ 產品 catalog 連動
+
+每篇新評測上線後：
+1. 把產品加進 `content/products/products.json`（用 `beauty-product-curator`）
+2. 設定 `articleSlug: "{category}/{slug}"`（不含 `articles/` 前綴與副檔名）
+3. 文章封面圖放 `public/images/articles/{slug}.{ext}`
+4. 產品圖放 `public/images/products/{id}.{ext}`
+5. `isFeatured: true` 的產品數量留意首頁 TOP 5 是否爆量
+
+### 連結管理
+
+- 蝦皮聯盟連結會週期性更新，更新時 grep `s.shopee.tw` 全域批次替換，文章內 + products.json 的 `affiliateUrl` 都要動到
+- 文章末段固定保留聯盟揭露聲明：「本文部分連結為聯盟行銷分潤連結⋯⋯」
